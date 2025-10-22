@@ -13,4 +13,4 @@ Program reads a binary file, reverses its content, and writes to another file.
 make
 
 ## Run
-printf "input.bin output.bin\n" | ./reverse
+./Assignment2a

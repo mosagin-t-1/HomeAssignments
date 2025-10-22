@@ -1,4 +1,4 @@
-project = reverse
+project = Assignment2a
 CXX = g++
 CXXFLAGS = -std=c++17
 
