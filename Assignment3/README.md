@@ -10,7 +10,7 @@ Implements class hierarchy for Transformers:
 - Base class: Transformer
 - Derived classes: Autobot, Decepticon, Minicon
 
-Each class has constructors, destructors, 2–3 fields with get/set methods, and simple methods returning a value.
+Each class has constructors, destructors, 2–3 fields with get/set methods, and simple methods returning a value
 
 ## Build
 make
