@@ -1,17 +1,17 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra
-OBJS = Transformer.o Autobot.o Decepticon.o Minicon.o
+CXXFLAGS = -Wall -Wextra -Wpedantic -Werror
+OBJS = Transformer.o Autobot.o Decepticon.o Minicon.o Team.o
 
 Assignment3: main.o $(OBJS)
 	$(CXX) $(CXXFLAGS) main.o $(OBJS) -o Assignment3
 
-main.o: main.cpp Transformer.h Autobot.h Decepticon.h Minicon.h
+main.o: main.cpp Transformer.h Autobot.h Decepticon.h Minicon.h Team.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
 
 Transformer.o: Transformer.cpp Transformer.h
 	$(CXX) $(CXXFLAGS) -c Transformer.cpp
 
-Autobot.o: Autobot.cpp Autobot.h Transformer.h
+Autobot.o: Autobot.cpp Autobot.h Transformer.h Minicon.h
 	$(CXX) $(CXXFLAGS) -c Autobot.cpp
 
 Decepticon.o: Decepticon.cpp Decepticon.h Transformer.h
@@ -20,8 +20,11 @@ Decepticon.o: Decepticon.cpp Decepticon.h Transformer.h
 Minicon.o: Minicon.cpp Minicon.h Transformer.h
 	$(CXX) $(CXXFLAGS) -c Minicon.cpp
 
-test:
-	$(CXX) $(CXXFLAGS) test_transformer.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Minicon.cpp -lgtest -lgtest_main -lpthread -o test_transformer
+Team.o: Team.cpp Team.h Transformer.h
+	$(CXX) $(CXXFLAGS) -c Team.cpp
+
+test: test_transformer.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Minicon.cpp Team.cpp
+	$(CXX) $(CXXFLAGS) test_transformer.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Minicon.cpp Team.cpp -lgtest -lgtest_main -lpthread -o test_transformer
 	./test_transformer
 
 clean:
