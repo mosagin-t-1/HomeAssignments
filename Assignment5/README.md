@@ -1,7 +1,7 @@
 # Assignment 5
 
 ## Author
-Тимофей Мосягин, Б-81
+Тимофей Мосягин, Б-81  
 st142155@student.spbu.ru
 
 ## Description
@@ -32,7 +32,7 @@ make
 ./Assignment5
 
 ## Tests
-make test_rational
+make test_rational  
 make test_matrix
 
 ## Clean
