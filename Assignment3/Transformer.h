@@ -2,12 +2,14 @@
 #define TRANSFORMER_H
 
 #include <string>
+#include <iosfwd>
 
 typedef unsigned int uint;
 
 class Transformer {
 public:
     Transformer();
+    Transformer(uint level, uint strength, uint range, uint fuel, uint ammo);
     virtual ~Transformer();
 
     bool move();
@@ -29,6 +31,9 @@ public:
     void setAmmo(uint ammo);
     uint getAmmo() const;
 
+    virtual void printClass() const = 0;
+    virtual void printAction() const;
+
 protected:
     uint _level;
     uint _strength;
@@ -37,5 +42,6 @@ protected:
     uint _ammo;
 };
 
-#endif
+std::ostream &operator<<(std::ostream &out, const Transformer &t);
 
+#endif
