@@ -1,3 +1,8 @@
+/*
+ * Timofey Mosyagin
+ * st142155@student.spbu.ru
+ * My home assignment 5
+ */
 #include <iostream>
 #include "Matrix.h"
 #include "Rational.h"

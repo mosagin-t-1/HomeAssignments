@@ -1,3 +1,8 @@
+/*
+ * Timofey Mosyagin
+ * st142155@student.spbu.ru
+ * My home assignment 5
+ */
 #ifndef MATRIX_H
 #define MATRIX_H
 
